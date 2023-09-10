@@ -14,6 +14,9 @@ import userRoutes from './routes/users.js';
 import postRoutes from './routes/post.js';
 import { verifyToken } from './middleware/auth.js';
 import { createPost } from './controllers/posts.js';
+import User from './models/User.js';
+import Post from './models/Post.js';
+import { users, posts } from './data/index.js';
 
 /* configuration */
 const __filename = fileURLToPath(import.meta.url); // Get the current filename using Node.js's import.meta.url
@@ -74,6 +77,9 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
+    //Mock data insertion to the database
+    //User.insertMany(users);
+    //Post.insertMany(posts);
     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
   })
   .catch((err) => console.error(`${err} did not connect`));
