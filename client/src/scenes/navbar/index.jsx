@@ -84,3 +84,5 @@ const navBar = () => {
 };
 
 export default navBar;
+
+//navbar designed here components
